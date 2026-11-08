@@ -1,0 +1,105 @@
+% make_tables.py 로 생성. 캡션은 직접 작성함 — make_tables.py 를 다시 돌리면 캡션이 TODO 로 덮어써지니 주의
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{cccc}
+\hline
+$n$ & \textbf{Eojeol} & \textbf{Morpheme} & \textbf{Syllable} \\
+\hline
+1 & \textbf{98.8 $\pm$ 0.1} & 96.4 $\pm$ 0.6 & 91.7 $\pm$ 1.0 \\
+2 & 92.4 $\pm$ 1.2 & \textbf{98.7 $\pm$ 0.3} & 97.4 $\pm$ 0.6 \\
+3 & 80.4 $\pm$ 1.2 & 97.6 $\pm$ 0.2 & 99.0 $\pm$ 0.3 \\
+4 & 63.5 $\pm$ 0.5 & 95.5 $\pm$ 0.7 & \textbf{99.3 $\pm$ 0.2} \\
+5 & 52.1 $\pm$ 0.4 & 91.8 $\pm$ 0.7 & 99.0 $\pm$ 0.3 \\
+6 & 50.4 $\pm$ 0.2 & 87.5 $\pm$ 0.4 & 98.2 $\pm$ 0.5 \\
+7 & 50.0 $\pm$ 0.0 & 82.6 $\pm$ 0.3 & 96.8 $\pm$ 0.6 \\
+8 & 50.0 $\pm$ 0.0 & 76.2 $\pm$ 0.6 & 94.2 $\pm$ 0.7 \\
+\hline
+\end{tabular}
+\caption{Unseen AUROC ($\times$100; mean $\pm$ population standard deviation over three seeds) for each unit and $n$ on the original data. Bold marks the optimal $n$ of each unit, i.e., the smallest $n$ within one standard deviation of the best mean.}
+\label{tab:main}
+\end{table}
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lcccc}
+\hline
+\textbf{Method} & \multicolumn{2}{c}{\textbf{Original}} & \multicolumn{2}{c}{\textbf{Masked}} \\
+ & Opt.\ $n$ & AUROC & Opt.\ $n$ & AUROC \\
+\hline
+Eojeol $n$-gram & 1 & 98.8 $\pm$ 0.1 & 1 & 98.5 $\pm$ 0.1 \\
+Morpheme $n$-gram & 2 & 98.7 $\pm$ 0.3 & 2 & 98.1 $\pm$ 0.1 \\
+Syllable $n$-gram & 4 & 99.3 $\pm$ 0.2 & 4 & 98.9 $\pm$ 0.1 \\
+KatFishNet (comma) & -- & 71.9 $\pm$ 1.3 & -- & 73.7 $\pm$ 1.8 \\
+\hline
+\end{tabular}
+\caption{Optimal $n$ and unseen AUROC of each unit, and of the KatFishNet comma baseline, on the original and masked data.}
+\label{tab:summary}
+\end{table}
+
+% \usepackage{multirow} 필요
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{llccc}
+\hline
+\textbf{Unit} & \textbf{Train $\backslash$ Test} & Haiku & Gemini & GPT \\
+\hline
+\multirow{3}{*}{Eojeol ($n$=1)} & Haiku & 99.9 & 98.9 & 99.6 \\
+ & Gemini & 98.1 & 100.0 & 98.3 \\
+ & GPT & 99.5 & 98.4 & 99.9 \\
+\hline
+\multirow{3}{*}{Morpheme ($n$=2)} & Haiku & 99.9 & 99.5 & 99.7 \\
+ & Gemini & 97.5 & 100.0 & 96.9 \\
+ & GPT & 99.6 & 99.0 & 99.9 \\
+\hline
+\multirow{3}{*}{Syllable ($n$=4)} & Haiku & 99.9 & 99.6 & 99.8 \\
+ & Gemini & 98.6 & 100.0 & 98.6 \\
+ & GPT & 99.7 & 99.2 & 100.0 \\
+\hline
+\end{tabular}
+\caption{AUROC for each pair of training and test generators at the optimal $n$ of each unit (original data, mean over three seeds). Off-diagonal cells are unseen generators; diagonal cells are shown for reference.}
+\label{tab:generators}
+\end{table}
+
+% 칸 = 해당 단위의 최고 AUROC (괄호 = 최적 n, 최고값의 1 std 이내 가장 작은 n)
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lcccc}
+\hline
+\textbf{Train $\rightarrow$ Test} & \textbf{Comma} & \textbf{Eojeol} & \textbf{Morpheme} & \textbf{Syllable} \\
+\hline
+Ours $\rightarrow$ Ours & 71.9 & 98.8 (1) & 98.7 (2) & 99.3 (4) \\
+Ours $\rightarrow$ KatFish & 72.2 & 72.5 (1) & 72.5 (1) & 76.7 (4) \\
+KatFish $\rightarrow$ KatFish & 78.2 & 83.8 (1) & 92.9 (3) & 85.6 (3) \\
+KatFish $\rightarrow$ Ours & 69.8 & 72.6 (1) & 81.6 (1) & 84.1 (1) \\
+\hline
+\end{tabular}
+\caption{Cross-dataset results (original data). Each cell is the best mean AUROC over $n$ for the unit, and the number in parentheses is the optimal $n$, which can differ from the $n$ with the best AUROC (KatFish$\rightarrow$KatFish syllables: best 85.6 at $n=5$, optimal $n=3$). Comma: KatFishNet comma baseline.}
+\label{tab:cross}
+\end{table}
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lcc}
+\hline
+\textbf{Comparison} & \textbf{Original} & \textbf{Masked} \\
+\hline
+Syllable-4 vs Eojeol-1 & +0.46 [+0.29, +0.66] & +0.45 [+0.26, +0.65] \\
+Syllable-4 vs Morpheme-2 & +0.57 [+0.42, +0.74] & +0.84 [+0.60, +1.09] \\
+Eojeol-1 vs Morpheme-2 & +0.11 [-0.14, +0.35] & +0.39 [+0.12, +0.68] \\
+Eojeol-1 vs Eojeol-2 & +6.43 [+5.49, +7.31] & +6.24 [+5.27, +7.14] \\
+Morpheme-2 vs Morpheme-1 & +2.29 [+1.78, +2.83] & +2.69 [+2.12, +3.29] \\
+Morpheme-2 vs Morpheme-3 & +1.09 [+0.82, +1.35] & +0.78 [+0.49, +1.06] \\
+Syllable-4 vs Syllable-3 & +0.23 [+0.12, +0.35] & +0.25 [+0.11, +0.37] \\
+Syllable-4 vs Syllable-5 & +0.26 [+0.16, +0.36] & +0.37 [+0.25, +0.49] \\
+\hline
+\end{tabular}
+\caption{Bootstrap 95\% confidence intervals of AUROC differences between settings (1,000 resamples of the test documents, averaged over seeds). Intervals that do not contain 0 indicate significant differences.}
+\label{tab:bootstrap}
+\end{table}
+

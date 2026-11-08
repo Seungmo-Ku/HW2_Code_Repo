@@ -1,0 +1,34 @@
+문서 997개 x 생성기 3개: claude-haiku-5-5, gemini-3.5-flash-lite, gpt-5.4-mini-2026-03-17
+  claude-haiku-5-5: 길이 맞춤 후 평균 사람 607자 / LLM 607자
+  gemini-3.5-flash-lite: 길이 맞춤 후 평균 사람 579자 / LLM 580자
+  gpt-5.4-mini-2026-03-17: 길이 맞춤 후 평균 사람 416자 / LLM 416자
+eojeol    n=1  unseen AUROC =  98.8 ±  0.1
+eojeol    n=2  unseen AUROC =  92.4 ±  1.2
+eojeol    n=3  unseen AUROC =  80.4 ±  1.2
+eojeol    n=4  unseen AUROC =  63.5 ±  0.5
+eojeol    n=5  unseen AUROC =  52.1 ±  0.4
+eojeol    n=6  unseen AUROC =  50.4 ±  0.2
+eojeol    n=7  unseen AUROC =  50.0 ±  0.0
+eojeol    n=8  unseen AUROC =  50.0 ±  0.0
+morpheme  n=1  unseen AUROC =  96.4 ±  0.6
+morpheme  n=2  unseen AUROC =  98.7 ±  0.3
+morpheme  n=3  unseen AUROC =  97.6 ±  0.2
+morpheme  n=4  unseen AUROC =  95.5 ±  0.7
+morpheme  n=5  unseen AUROC =  91.8 ±  0.7
+morpheme  n=6  unseen AUROC =  87.5 ±  0.4
+morpheme  n=7  unseen AUROC =  82.6 ±  0.3
+morpheme  n=8  unseen AUROC =  76.2 ±  0.6
+syllable  n=1  unseen AUROC =  91.7 ±  1.0
+syllable  n=2  unseen AUROC =  97.4 ±  0.6
+syllable  n=3  unseen AUROC =  99.0 ±  0.3
+syllable  n=4  unseen AUROC =  99.3 ±  0.2
+syllable  n=5  unseen AUROC =  99.0 ±  0.3
+syllable  n=6  unseen AUROC =  98.2 ±  0.5
+syllable  n=7  unseen AUROC =  96.8 ±  0.6
+syllable  n=8  unseen AUROC =  94.2 ±  0.7
+
+최적 n (최고값의 1 표준편차 이내인 가장 작은 n):
+  eojeol    최고 n=1 (98.8)  ->  최적 n = 1
+  morpheme  최고 n=2 (98.7)  ->  최적 n = 2
+  syllable  최고 n=4 (99.3)  ->  최적 n = 4
+seed/생성기 쌍별 결과 -> results/main.csv

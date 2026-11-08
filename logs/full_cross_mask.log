@@ -1,0 +1,33 @@
+우리 문서 997개 x 생성기 3개 / KatFish 초록 사람 100 LLM 278 (mask)
+comma     n=0  ours->ours= 73.7  ours->katfish= 71.2  katfish->katfish= 76.8  katfish->ours= 69.3
+eojeol    n=1  ours->ours= 98.5  ours->katfish= 69.7  katfish->katfish= 84.6  katfish->ours= 71.6
+eojeol    n=2  ours->ours= 92.2  ours->katfish= 67.9  katfish->katfish= 84.2  katfish->ours= 55.4
+eojeol    n=3  ours->ours= 78.8  ours->katfish= 60.6  katfish->katfish= 72.6  katfish->ours= 51.6
+eojeol    n=4  ours->ours= 61.7  ours->katfish= 54.2  katfish->katfish= 64.0  katfish->ours= 51.4
+eojeol    n=5  ours->ours= 51.6  ours->katfish= 49.5  katfish->katfish= 48.8  katfish->ours= 50.2
+eojeol    n=6  ours->ours= 50.3  ours->katfish= 50.2  katfish->katfish= 49.0  katfish->ours= 49.9
+eojeol    n=7  ours->ours= 50.0  ours->katfish= 50.0  katfish->katfish= 48.9  katfish->ours= 50.0
+eojeol    n=8  ours->ours= 50.0  ours->katfish= 50.0  katfish->katfish= 50.6  katfish->ours= 50.0
+morpheme  n=1  ours->ours= 95.4  ours->katfish= 69.1  katfish->katfish= 85.7  katfish->ours= 79.5
+morpheme  n=2  ours->ours= 98.1  ours->katfish= 68.9  katfish->katfish= 90.3  katfish->ours= 78.1
+morpheme  n=3  ours->ours= 97.3  ours->katfish= 72.6  katfish->katfish= 93.7  katfish->ours= 70.6
+morpheme  n=4  ours->ours= 95.2  ours->katfish= 72.5  katfish->katfish= 91.6  katfish->ours= 63.6
+morpheme  n=5  ours->ours= 91.6  ours->katfish= 69.4  katfish->katfish= 89.0  katfish->ours= 58.0
+morpheme  n=6  ours->ours= 86.9  ours->katfish= 66.5  katfish->katfish= 87.3  katfish->ours= 56.4
+morpheme  n=7  ours->ours= 81.4  ours->katfish= 62.4  katfish->katfish= 81.6  katfish->ours= 55.1
+morpheme  n=8  ours->ours= 74.6  ours->katfish= 57.8  katfish->katfish= 76.1  katfish->ours= 53.5
+syllable  n=1  ours->ours= 92.1  ours->katfish= 65.3  katfish->katfish= 81.9  katfish->ours= 75.3
+syllable  n=2  ours->ours= 97.2  ours->katfish= 66.8  katfish->katfish= 85.2  katfish->ours= 78.1
+syllable  n=3  ours->ours= 98.7  ours->katfish= 72.0  katfish->katfish= 85.5  katfish->ours= 79.5
+syllable  n=4  ours->ours= 98.9  ours->katfish= 76.3  katfish->katfish= 87.4  katfish->ours= 77.0
+syllable  n=5  ours->ours= 98.6  ours->katfish= 75.5  katfish->katfish= 87.0  katfish->ours= 70.8
+syllable  n=6  ours->ours= 97.5  ours->katfish= 74.0  katfish->katfish= 87.0  katfish->ours= 65.2
+syllable  n=7  ours->ours= 95.9  ours->katfish= 72.7  katfish->katfish= 86.8  katfish->ours= 58.7
+syllable  n=8  ours->ours= 92.9  ours->katfish= 72.3  katfish->katfish= 87.3  katfish->ours= 53.0
+
+방향별 최고 성능과 최적 n (최고값의 1 표준편차 이내인 가장 작은 n):
+  ours->ours        comma  73.7 | eojeol 최고  98.5 (n=1) 최적 n=1 | morpheme 최고  98.1 (n=2) 최적 n=2 | syllable 최고  98.9 (n=4) 최적 n=4
+  ours->katfish     comma  71.2 | eojeol 최고  69.7 (n=1) 최적 n=1 | morpheme 최고  72.6 (n=3) 최적 n=3 | syllable 최고  76.3 (n=4) 최적 n=4
+  katfish->katfish  comma  76.8 | eojeol 최고  84.6 (n=1) 최적 n=1 | morpheme 최고  93.7 (n=3) 최적 n=3 | syllable 최고  87.4 (n=4) 최적 n=2
+  katfish->ours     comma  69.3 | eojeol 최고  71.6 (n=1) 최적 n=1 | morpheme 최고  79.5 (n=1) 최적 n=1 | syllable 최고  79.5 (n=3) 최적 n=2
+seed/방향별 결과 -> results/cross_mask.csv
